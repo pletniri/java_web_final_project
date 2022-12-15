@@ -31,4 +31,15 @@ public class SheepService {
 
         sheepRepository.deleteById(id);
     }
+
+    //have to redo this method
+    public void update(Sheep sheep, int id) {
+        Optional <Sheep> sheep1  = sheepRepository.findById(id);
+        if(sheep1.isPresent()) {
+            Sheep sheepToUpdate = sheep1.get();
+            sheepToUpdate.setName(sheep.getName());
+            sheepToUpdate.setColor(sheep.getColor());
+            sheepRepository.save.(sheep1.get());
+        }
+    }
 }

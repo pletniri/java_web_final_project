@@ -18,7 +18,7 @@ public class SheepController {
 
     @CrossOrigin("*")
     @GetMapping
-    public List<Sheep> getSheeps() {
+    public List<Sheep> getSheep() {
         return sheepService.all();
     }
     @CrossOrigin("*")
@@ -38,9 +38,16 @@ public class SheepController {
         sheepService.add( sheep );
     }
 
+//    @PutMapping
+//    public void updateSheep(@RequestParam(value = "id") Integer id,
+//                            @RequestBody Sheep sheep){
+//        sheepService.update(sheep.id);
+//    }
+
+
     @CrossOrigin("*")
     @DeleteMapping
-    public void delete (@PathVariable Integer id) {
+    public void deleteSheep (@RequestParam(value = "id") Integer id) {
         sheepService.delete(id);
     }
 }
